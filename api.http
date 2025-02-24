@@ -1,11 +1,13 @@
 GET http://localhost:8080/students
 
+###
+GET http://localhost:8080/students/2
+
 ### 
 POST http://localhost:8080/students
 Content-Type: application/json
 
-{
-  "id":"4",
+{ 
   "name":"ahihi",
   "score":"123"
 }
