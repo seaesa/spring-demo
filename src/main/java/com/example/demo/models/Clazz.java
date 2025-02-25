@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -16,16 +15,10 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Student {
+public class Clazz {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   int id;
   @Column(columnDefinition = "varchar(50)")
   String name;
-  double score;
-  String address;
-  @ManyToOne
-  Clazz clazz;
-  @Column(columnDefinition = "varchar(50)")
-  String avt;
 }

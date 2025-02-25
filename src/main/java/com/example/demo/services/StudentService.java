@@ -1,7 +1,7 @@
 package com.example.demo.services;
 
 import com.example.demo.models.Student;
-import com.example.demo.repositories.StudentRepository;
+import com.example.demo.repositories.IStudentRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class StudentService implements IStudentService {
-  StudentRepository studentRepository;
+  IStudentRepository studentRepository;
 
   @Override
   public List<Student> findAll() {
@@ -21,7 +21,7 @@ public class StudentService implements IStudentService {
 
   @Override
   public Student findById(Integer id) {
-    return studentRepository.findById(id);
+    return studentRepository.findById(id).get();
   }
 
   @Override
